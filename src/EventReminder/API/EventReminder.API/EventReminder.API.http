@@ -1,0 +1,6 @@
+@EventReminder.API_HostAddress = http://localhost:5140
+
+GET {{EventReminder.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
