@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace EventReminder.SharedKernel.Primitives
+﻿namespace EventReminder.SharedKernel.Primitives
 {
     public class Response
     {
@@ -53,6 +46,29 @@ namespace EventReminder.SharedKernel.Primitives
         /// <param name="error">The error.</param>
         /// <returns>A new instance of <see cref="Response"/> with the specified error and failure flag set.</returns>
         public static Response Failure(FailResponse error) => new Response(false, error);
+
+        /// <summary>
+        /// Creates a new <see cref="Response{TValue}"/> with the specified nullable value and the specified error.
+        /// </summary>
+        /// <typeparam name="TValue">The result type.</typeparam>
+        /// <param name="value">The result value.</param>
+        /// <param name="error">The error in case the value is null.</param>
+        /// <returns>A new instance of <see cref="Response{TValue}"/> with the specified value or an error.</returns>
+        public static Response<TValue> Create<TValue>(TValue value, FailResponse error)
+            where TValue : class
+            => value is null ? Failure<TValue>(error) : Success(value);
+
+        /// <summary>
+        /// Returns a failure <see cref="Result{TValue}"/> with the specified error.
+        /// </summary>
+        /// <typeparam name="TValue">The result type.</typeparam>
+        /// <param name="error">The error.</param>
+        /// <returns>A new instance of <see cref="Result{TValue}"/> with the specified error and failure flag set.</returns>
+        /// <remarks>
+        /// We're purposefully ignoring the nullable assignment here because the API will never allow it to be accessed.
+        /// The value is accessed through a method that will throw an exception if the result is a failure result.
+        /// </remarks>
+        public static Response<TValue> Failure<TValue>(FailResponse error) => new Response<TValue>(default!, false, error);
     }
 
     /// <summary>
@@ -61,7 +77,7 @@ namespace EventReminder.SharedKernel.Primitives
     /// <typeparam name="TValue">The result value type.</typeparam>
     public class Response<TValue> : Response
     {
-        private readonly TValue _value;
+        private readonly TValue _data;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Response{TValueType}"/> class with the specified parameters.
@@ -69,19 +85,12 @@ namespace EventReminder.SharedKernel.Primitives
         /// <param name="value">The result value.</param>
         /// <param name="isSuccess">The flag indicating if the result is successful.</param>
         /// <param name="error">The error.</param>
-        protected internal Response(TValue value, bool isSuccess, FailResponse error)
+        protected internal Response(TValue data, bool isSuccess, FailResponse error)
             : base(isSuccess, error)
-            => _value = value;
+            => _data = data;
 
-        public static implicit operator Response<TValue>(TValue value) => Success(value);
+        public static implicit operator Response<TValue>(TValue data) => Success(data);
 
-        /// <summary>
-        /// Gets the result value if the result is successful, otherwise throws an exception.
-        /// </summary>
-        /// <returns>The result value if the result is successful.</returns>
-        /// <exception cref="InvalidOperationException"> when <see cref="Result.IsFailure"/> is true.</exception>
-        public TValue Value => IsSuccess
-            ? _value
-            : throw new InvalidOperationException("The value of a failure result can not be accessed.");
+        public TValue Data => IsSuccess ? _data : default;
     }
 }
