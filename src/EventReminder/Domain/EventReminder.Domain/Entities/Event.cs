@@ -1,21 +1,15 @@
 ﻿using EventReminder.Domain.Abstraction;
 using EventReminder.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+using EventReminder.Domain.ValueObjects;
 
 namespace EventReminder.Domain.Entities
 {
-    public class Event : BaseEntity<long>, IAuditableEntity, ISoftDeletableEntity
+    public sealed class Event : BaseEntity<long>, IAuditableEntity, ISoftDeletableEntity
     {        
         /// <summary>
         /// Initializes a new instance of the <see cref="Event"/> class.
         /// </summary>
         /// <remarks>
-        /// Required by EF Core.
         /// </remarks>
         protected Event()
         {

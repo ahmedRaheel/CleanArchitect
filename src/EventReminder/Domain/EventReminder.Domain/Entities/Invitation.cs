@@ -2,21 +2,20 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EventReminder.Domain.Entities
 {
-    public sealed class Attendee : BaseEntity<long>, IAuditableEntity, ISoftDeletableEntity
+    public sealed class Invitation : BaseEntity<long>,  IAuditableEntity, ISoftDeletableEntity
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Attendee"/> class.
+        /// Initializes a new instance of the <see cref="Invitation"/> class.
         /// </summary>
         /// <remarks>
         /// Required by EF Core.
         /// </remarks>
-        private Attendee()
+        private Invitation()
         {
         }
 
@@ -31,9 +30,19 @@ namespace EventReminder.Domain.Entities
         public long UserId { get; private set; }
 
         /// <summary>
-        /// Gets the value indicating whether or not the event has been processed.
+        /// Gets the value indicating whether or not the invitation has been accepted.
         /// </summary>
-        public bool Processed { get; private set; }
+        public bool Accepted { get; private set; }
+
+        /// <summary>
+        /// Gets the value indicating whether or not the invitation has been rejected.
+        /// </summary>
+        public bool Rejected { get; private set; }
+
+        /// <summary>
+        /// Gets the date and time the invitation was completed on in UTC format.
+        /// </summary>
+        public DateTime? CompletedOnUtc { get; private set; }
 
         /// <inheritdoc />
         public DateTime CreatedOnUtc { get; }
