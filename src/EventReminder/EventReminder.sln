@@ -5,23 +5,23 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{741178D4-6346-459F-8D26-C3143B9B0076}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventReminder.API", "API\EventReminder.API\EventReminder.API.csproj", "{949695E1-2513-4D23-B514-9955EE900BF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventReminder.API", "API\EventReminder.API\EventReminder.API.csproj", "{949695E1-2513-4D23-B514-9955EE900BF4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Usecase", "Usecase", "{8A78A7B9-6B5E-48C2-A0BD-D15DC4D3DE0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventReminder.Usecase", "Usecase\EventReminder.Usecase\EventReminder.Usecase.csproj", "{A4844287-6055-45B1-B851-387B2AC4D7A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventReminder.Usecase", "Usecase\EventReminder.Usecase\EventReminder.Usecase.csproj", "{A4844287-6055-45B1-B851-387B2AC4D7A0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{63B29B9C-C09C-4856-81EC-284310970A23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventReminder.Domain", "Domain\EventReminder.Domain\EventReminder.Domain.csproj", "{43E9E346-8D51-41C6-9F58-4D0CD4F7C630}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8EC5D770-C1AF-4185-B18B-4B98D04DC7DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventReminder.Infrastructure", "Infrastructure\EventReminder.Infrastructure\EventReminder.Infrastructure.csproj", "{E148E014-3003-452B-BB21-B5D3A93C9633}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventReminder.Infrastructure", "Infrastructure\EventReminder.Infrastructure\EventReminder.Infrastructure.csproj", "{E148E014-3003-452B-BB21-B5D3A93C9633}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{39EBB13A-C2A6-4C12-92C7-03B5609938AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventReminder.SharedKernel", "Shared\EventReminder.SharedKernel\EventReminder.SharedKernel.csproj", "{FE204199-B210-4FA5-BA5B-5495E5BFBE64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventReminder.SharedKernel", "Shared\EventReminder.SharedKernel\EventReminder.SharedKernel.csproj", "{FE204199-B210-4FA5-BA5B-5495E5BFBE64}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventReminder.Domain", "Domain\EventReminder.Domain\EventReminder.Domain.csproj", "{6A88635E-BB29-472F-8361-A54CF7A50AF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,6 @@ Global
 		{A4844287-6055-45B1-B851-387B2AC4D7A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4844287-6055-45B1-B851-387B2AC4D7A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4844287-6055-45B1-B851-387B2AC4D7A0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{43E9E346-8D51-41C6-9F58-4D0CD4F7C630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43E9E346-8D51-41C6-9F58-4D0CD4F7C630}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43E9E346-8D51-41C6-9F58-4D0CD4F7C630}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{43E9E346-8D51-41C6-9F58-4D0CD4F7C630}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E148E014-3003-452B-BB21-B5D3A93C9633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E148E014-3003-452B-BB21-B5D3A93C9633}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E148E014-3003-452B-BB21-B5D3A93C9633}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -49,6 +45,10 @@ Global
 		{FE204199-B210-4FA5-BA5B-5495E5BFBE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE204199-B210-4FA5-BA5B-5495E5BFBE64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE204199-B210-4FA5-BA5B-5495E5BFBE64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A88635E-BB29-472F-8361-A54CF7A50AF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A88635E-BB29-472F-8361-A54CF7A50AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A88635E-BB29-472F-8361-A54CF7A50AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A88635E-BB29-472F-8361-A54CF7A50AF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,9 +56,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{949695E1-2513-4D23-B514-9955EE900BF4} = {741178D4-6346-459F-8D26-C3143B9B0076}
 		{A4844287-6055-45B1-B851-387B2AC4D7A0} = {8A78A7B9-6B5E-48C2-A0BD-D15DC4D3DE0A}
-		{43E9E346-8D51-41C6-9F58-4D0CD4F7C630} = {63B29B9C-C09C-4856-81EC-284310970A23}
 		{E148E014-3003-452B-BB21-B5D3A93C9633} = {8EC5D770-C1AF-4185-B18B-4B98D04DC7DB}
 		{FE204199-B210-4FA5-BA5B-5495E5BFBE64} = {39EBB13A-C2A6-4C12-92C7-03B5609938AF}
+		{6A88635E-BB29-472F-8361-A54CF7A50AF4} = {63B29B9C-C09C-4856-81EC-284310970A23}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A43C9C99-EFE7-49D3-97A8-8BCE231D1424}
