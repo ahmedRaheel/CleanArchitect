@@ -2,6 +2,9 @@
 
 namespace EventReminder.Domain.Enums
 {
+    /// <summary>
+    /// ErrorCode
+    /// </summary>
     public enum ErrorCode
     {
         [Description("ServerError")]

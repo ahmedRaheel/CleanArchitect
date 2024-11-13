@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventReminder.SharedKernel"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventReminder.Domain", "Domain\EventReminder.Domain\EventReminder.Domain.csproj", "{6A88635E-BB29-472F-8361-A54CF7A50AF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventReminder.Infrastructure.Persistence", "Infrastructure\EventReminder.Infrastructure.Persistence\EventReminder.Infrastructure.Persistence.csproj", "{B150F5B7-4A3D-44CF-92D1-789081C9D695}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{6A88635E-BB29-472F-8361-A54CF7A50AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A88635E-BB29-472F-8361-A54CF7A50AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A88635E-BB29-472F-8361-A54CF7A50AF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B150F5B7-4A3D-44CF-92D1-789081C9D695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B150F5B7-4A3D-44CF-92D1-789081C9D695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B150F5B7-4A3D-44CF-92D1-789081C9D695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B150F5B7-4A3D-44CF-92D1-789081C9D695}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{E148E014-3003-452B-BB21-B5D3A93C9633} = {8EC5D770-C1AF-4185-B18B-4B98D04DC7DB}
 		{FE204199-B210-4FA5-BA5B-5495E5BFBE64} = {39EBB13A-C2A6-4C12-92C7-03B5609938AF}
 		{6A88635E-BB29-472F-8361-A54CF7A50AF4} = {63B29B9C-C09C-4856-81EC-284310970A23}
+		{B150F5B7-4A3D-44CF-92D1-789081C9D695} = {8EC5D770-C1AF-4185-B18B-4B98D04DC7DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A43C9C99-EFE7-49D3-97A8-8BCE231D1424}

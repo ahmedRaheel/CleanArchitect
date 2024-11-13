@@ -1,14 +1,25 @@
 ﻿using EventReminder.Domain.Abstraction;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using EventReminder.SharedKernel.Utility;
 
 namespace EventReminder.Domain.Entities
 {
+    /// <summary>
+    /// Represents Invitation
+    /// </summary>
     public sealed class Invitation : BaseEntity<long>,  IAuditableEntity, ISoftDeletableEntity
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Invitation"/> class.
+        /// </summary>
+        /// <param name="event">The group event.</param>
+        /// <param name="user">The user.</param>
+        public Invitation(int userId)
+            : base()
+        {
+            UserId = userId;
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Invitation"/> class.
         /// </summary>
