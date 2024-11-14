@@ -1,4 +1,5 @@
 ﻿using EventReminder.Domain.Entities;
+using EventReminder.Domain.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -11,6 +12,15 @@ namespace EventReminder.Infrastructure.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Event> builder)
         {
+            builder.OwnsOne(@event => @event.Name, nameBuilder =>
+            {
+                nameBuilder.WithOwner();
+
+                nameBuilder.Property(name => name.Value)
+                    .HasColumnName(nameof(Event.Name))
+                    .HasMaxLength(Name.MaxLength)
+                    .IsRequired();
+            });
             builder.HasKey(@event => @event.Id);
             builder.Property(@event => @event.DateTimeUtc).IsRequired();
             builder.Property(@event => @event.Cancelled).HasDefaultValue(false);
