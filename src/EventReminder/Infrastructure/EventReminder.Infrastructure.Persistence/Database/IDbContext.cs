@@ -17,7 +17,5 @@ namespace EventReminder.Infrastructure.Persistence.Database
         /// <returns>The database set for the specified entity type.</returns>
         DbSet<TEntity> Set<TEntity>()
             where TEntity : BaseEntity<long>;
-
-
     }
 }
