@@ -27,6 +27,27 @@ namespace EventReminder.Infrastructure.Persistence.Database
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             base.OnModelCreating(modelBuilder);
-        }    
+        }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>     
+        public new async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            using (var transaction = await Database.BeginTransactionAsync()) 
+            {
+                try
+                {
+                    var rows = await base.SaveChangesAsync(cancellationToken);
+                    await transaction.CommitAsync();
+                    return rows;
+                }
+                catch (Exception)
+                {
+                    await transaction.RollbackAsync();
+                    throw;
+                }
+            }       
+        }
     }
 }

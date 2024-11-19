@@ -45,6 +45,11 @@ namespace EventReminder.Infrastructure.Persistence.Repositories
         public void Remove(TEntity entity) => DbContext.Set<TEntity>().Remove(entity);
 
         /// <summary>
+        ///  <inheritdoc/>
+        /// </summary>
+        public void SaveChanges(CancellationToken cancellationToken) => DbContext.SaveChangesAsync(cancellationToken);
+
+        /// <summary>
         /// Checks if any entity meets the specified specification.
         /// </summary>
         /// <param name="specification">The specification.</param>
