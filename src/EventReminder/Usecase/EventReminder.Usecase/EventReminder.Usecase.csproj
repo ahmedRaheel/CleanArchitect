@@ -7,12 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Domain\EventReminder.Domain\EventReminder.Domain.csproj" />
     <ProjectReference Include="..\..\Shared\EventReminder.SharedKernel\EventReminder.SharedKernel.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Core\Abstractions\" />
+    <Folder Include="Invitations\Quries\" />
   </ItemGroup>
 
 </Project>

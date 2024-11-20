@@ -16,4 +16,9 @@
     <ProjectReference Include="..\..\Infrastructure\EventReminder.Infrastructure.Persistence\EventReminder.Infrastructure.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Endpoints\" />
+    <Folder Include="Middlewares\" />
+  </ItemGroup>
+
 </Project>
